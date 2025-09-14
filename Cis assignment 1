@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Practice – SheCodes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f9f7fe;
+      color: #272044;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+      background: linear-gradient(135deg, #885df1, #e5215e);
+      color: #fff;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 { font-size: 48px; margin-bottom: 10px; }
+    h2 { font-size: 32px; color: #885df1; margin: 20px 0 10px; }
+    h3 { font-size: 24px; color: #e5215e; margin: 15px 0; }
+
+    section {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .example-box {
+      background: #f5f2ff;
+      padding: 15px;
+      border-left: 4px solid #885df1;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    ul, ol { margin: 15px 0 15px 30px; }
+    li { margin-bottom: 8px; }
+
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #885df1, transparent);
+      margin: 20px 0;
+    }
+
+    .horizontal-line-demo {
+      text-align: center;
+      font-style: italic;
+      color: #666;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .navigation a {
+      color: #885df1;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: 2px solid #885df1;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .navigation a:hover {
+      background: #885df1;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      color: #666;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 28px; }
+      section { padding: 20px 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SheCodes</h1>
+    <p>HTML Practice Repository</p>
+  </header>
+
+  <nav class="navigation">
+    <a href="#headings">Headings</a>
+    <a href="#paragraphs">Paragraphs</a>
+    <a href="#formatting">Formatting</a>
+    <a href="#lists">Lists</a>
+    <a href="#links">Links & Images</a>
+  </nav>
+
+  <section id="headings">
+    <h2>HTML Headings</h2>
+    <p>HTML provides six levels of headings, from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>.</p>
+    <div class="example-box">
+      <h1>FIRST REPOSITORY (h1)</h1>
+      <h2>FIRST REPOSITORY (h2)</h2>
+      <h3>FIRST REPOSITORY (h3)</h3>
+      <h4>FIRST REPOSITORY (h4)</h4>
+      <h5>FIRST REPOSITORY (h5)</h5>
+      <h6>FIRST REPOSITORY (h6)</h6>
+    </div>
+  </section>
+
+  <section id="paragraphs">
+    <h2>Paragraphs and Line Breaks</h2>
+    <p>The <code>&lt;p&gt;</code> tag defines a paragraph, while <code>&lt;br&gt;</code> creates a line break.</p>
+    <div class="example-box">
+      <p>SheCodes teaches busy women how to code.</p>
+      <p>Coding workshops <br> Are available for all <br> Sign up today</p>
+    </div>
+  </section>
+
+  <section id="formatting">
+    <h2>Text Formatting</h2>
+    <p>HTML provides various tags for text formatting:</p>
+    <div class="example-box">
+      <p><em>&lt;em&gt; makes text italic</em> - used for emphasis</p>
+      <p><strong>&lt;strong&gt; makes text bold</strong> - used for importance</p>
+      <div class="horizontal-line-demo">
+        <p>Horizontal lines with <code>&lt;hr&gt;</code>:</p>
+        <p>Coding workshops</p>
+        <hr>
+        <p>are available for all</p>
+        <hr>
+        <p>Sign up today</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lists">
+    <h2>HTML Lists</h2>
+    <p>HTML provides ordered (<code>&lt;ol&gt;</code>) and unordered (<code>&lt;ul&gt;</code>) lists.</p>
+    <div class="example-box">
+      <h3>Unordered List</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>C++</li>
+      </ul>
+      <h3>Ordered List</h3>
+      <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>C++</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="links">
+    <h2>Anchor Tags and Images</h2>
+    <p>The <code>&lt;a&gt;</code> tag defines hyperlinks, and the <code>&lt;img&gt;</code> tag embeds images.</p>
+    <div class="example-box">
+      <h3>Links Example</h3>
+      <ul>
+        <li><a href="https://www.google.com">Google (same tab)</a></li>
+        <li><a href="https://www.google.com" target="_blank">Google (new tab)</a></li>
+        <li><a href="https://www.pexels.com/">Free stock images</a></li>
+      </ul>
+      <h3>Image Example</h3>
+      <div class="image-container">
+        <img src="https://images.pexels.com/photos/30063037/pexels-photo-30063037.jpeg" alt="Walkway through garden" width="500" height="500">
+        <p>Beautiful walkway (source: Pexels)</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>More Info</h2>
+    <p>SheCodes offers coding workshops for women in a supportive environment. Courses include HTML, CSS, JavaScript, and more.</p>
+    <div class="example-box">
+      <h3>What we offer:</h3>
+      <ul>
+        <li><strong>Codes</strong> - Various programming languages</li>
+        <li><strong>Course</strong> - Structured learning paths</li>
+        <li><strong>Stories</strong> - Alumni success stories</li>
+      </ul>
+      <p>Join our community of women in tech today!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Created as part of SheCodes HTML Practice Exercise</p>
+    <p>© 2023 SheCodes | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
