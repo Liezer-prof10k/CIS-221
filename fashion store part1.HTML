@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store - Your Style Destination</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .benefits {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .benefits h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card h3 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+
+        .products-section {
+            margin: 3rem 0;
+        }
+
+        .products-section h2 {
+            color: #333;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .buy-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            transition: transform 0.2s ease;
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .sales-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .sales-section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .discount-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>✨ Fashion Store ✨</h1>
+        <p>Discover Your Perfect Style</p>
+    </header>
+
+    <div class="container">
+        <div class="benefits">
+            <h2>Why Shop With Us?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>🚚 Free Shipping</h3>
+                    <p>Enjoy free shipping on all orders over $50. Fast delivery guaranteed to your doorstep.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>💎 Premium Quality</h3>
+                    <p>Handpicked fashion items made with the finest materials and craftsmanship.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>🔄 Easy Returns</h3>
+                    <p>30-day hassle-free returns. Not satisfied? We'll make it right!</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>💳 Secure Payment</h3>
+                    <p>Shop with confidence using our encrypted payment system.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-section">
+            <h2>Featured Collections</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">👗</div>
+                    <div class="product-info">
+                        <h3>Summer Dresses</h3>
+                        <p>Light, breezy, and perfect for warm weather. Available in multiple colors.</p>
+                        <div class="price">$49.99</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👔</div>
+                    <div class="product-info">
+                        <h3>Formal Suits</h3>
+                        <p>Elegant suits for business or special occasions. Tailored fit guaranteed.</p>
+                        <div class="price">$299.99</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👟</div>
+                    <div class="product-info">
+                        <h3>Casual Sneakers</h3>
+                        <p>Comfortable and stylish sneakers for everyday wear. Multiple designs available.</p>
+                        <div class="price">$79.99</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👜</div>
+                    <div class="product-info">
+                        <h3>Designer Bags</h3>
+                        <p>Luxury handbags that complete your outfit. Premium leather quality.</p>
+                        <div class="price">$149.99</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🧥</div>
+                    <div class="product-info">
+                        <h3>Winter Jackets</h3>
+                        <p>Stay warm and stylish with our collection of winter jackets.</p>
+                        <div class="price">$189.99</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👓</div>
+                    <div class="product-info">
+                        <h3>Sunglasses</h3>
+                        <p>Trendy sunglasses with UV protection. Various styles to choose from.</p>
+                        <div class="price">$39.99</div>
+                        <button class="buy-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sales-section">
+            <h2>🎉 Upcoming Sale Offers</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Discount</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Special Offer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Summer Collection</strong></td>
+                        <td><span class="discount-badge">40% OFF</span></td>
+                        <td>Oct 10, 2025</td>
+                        <td>Oct 20, 2025</td>
+                        <td>Buy 2 Get 1 Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Footwear Sale</strong></td>
+                        <td><span class="discount-badge">30% OFF</span></td>
+                        <td>Oct 15, 2025</td>
+                        <td>Oct 25, 2025</td>
+                        <td>Free Shoe Care Kit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Accessories Bonanza</strong></td>
+                        <td><span class="discount-badge">50% OFF</span></td>
+                        <td>Oct 20, 2025</td>
+                        <td>Oct 31, 2025</td>
+                        <td>Extra 10% on $100+</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Winter Wear Preview</strong></td>
+                        <td><span class="discount-badge">25% OFF</span></td>
+                        <td>Oct 25, 2025</td>
+                        <td>Nov 5, 2025</td>
+                        <td>Early Bird Special</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Clearance Sale</strong></td>
+                        <td><span class="discount-badge">60% OFF</span></td>
+                        <td>Nov 1, 2025</td>
+                        <td>Nov 10, 2025</td>
+                        <td>Limited Stock Only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Fashion Store. All Rights Reserved.</p>
+        <p>Designed with ❤️ for Fashion Enthusiasts</p>
+        <p>Privacy Policy | Terms of Service | Contact Us</p>
+    </footer>
+</body>
+</html>
